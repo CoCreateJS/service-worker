@@ -21,12 +21,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoCreateJS/CoCreate-service-worker.git"
+    "url": "git+https://github.com/CoCreateJS/service-worker.git"
   },
   "author": "CoCreate LLC",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/CoCreateJS/CoCreate-service-worker/issues"
+    "url": "https://github.com/CoCreateJS/service-worker/issues"
   },
   "homepage": "https://CoCreateJS.com/docs/service-worker",
   "main": "./src/index.js",
