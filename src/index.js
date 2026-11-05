@@ -17,6 +17,15 @@ function setStorageValue(key, value) {
 }
 
 function getWorkerUrl(workerPath) {
+	if (window.top !== window.self) return null;
+
+	if (
+		window.location.protocol !== "http:" &&
+		window.location.protocol !== "https:"
+	) {
+		return null;
+	}
+
 	const config = window.CoCreateConfig || {};
 	const path =
 		workerPath ||
@@ -42,6 +51,7 @@ async function register(workerPath) {
 	if (!("serviceWorker" in navigator)) return null;
 
 	const url = getWorkerUrl(workerPath);
+	if (!url) return null;
 	if (registrations.has(url)) return registrations.get(url);
 
 	const promise = navigator.serviceWorker.register(url).catch((error) => {
